@@ -12,7 +12,7 @@ app.get('/new/:name', function(req,res){
     // console.log(name);
     //return output
     var jsonoutput = JSON.stringify({
-        original_url: "shortstop",
+        original_url: req.params.name,
         short_url: "http://dickorydock-shorturl.herokuapp.com/mememe"
     })
 	res.send(jsonoutput);
