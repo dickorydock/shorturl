@@ -9,10 +9,10 @@ var app=express();
 app.get('/new/:name', function(req,res){
 
     //detect if name is a URL
-
+    console.log(name);
     //return output
     var jsonoutput = JSON.stringify({
-        original_url: name,
+        original_url: "shortstop",
         short_url: "http://dickorydock-shorturl.herokuapp.com/mememe"
     })
 	res.send(jsonoutput);
