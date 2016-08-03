@@ -4,10 +4,10 @@ var app=express();
 
 var jsonoutput;
 
-app.get('/', function(req, res){
-    jsonoutput = JSON.stringify({unix: null, natural: null});
-    res.send(jsonoutput);
-})
+// app.get('/', function(req, res){
+//     jsonoutput = JSON.stringify({unix: null, natural: null});
+//     res.send(jsonoutput);
+// })
 app.get('/new/:name', function(req,res){
 
     //detect if name is a URL
