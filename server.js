@@ -11,9 +11,10 @@ app.get('/new/:name', function(req,res){
 
     //detect if name is a URL
     //return output
-    http.get(req.params.name, function(data){
-        console.log(data);
-    });
+    console.log(typeof(req.params.name))
+    // http.get(req.params.name, function(data){
+        // console.log(data);
+    // });
     // http.get(req.params.name, function(data){
     //     if (data.statusCode != 200){
     //         mystatus = "Could not load";
