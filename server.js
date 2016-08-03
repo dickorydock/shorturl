@@ -1,6 +1,7 @@
 var express = require("express");
 var moment = require("moment");
 var app=express();
+var status;
 
 // app.get('/', function(req, res){
 //     jsonoutput = JSON.stringify({unix: null, natural: null});
@@ -9,11 +10,19 @@ var app=express();
 app.get('/new/:name', function(req,res){
 
     //detect if name is a URL
-    // console.log(name);
     //return output
+    http.get(req.params.name, function(data)){
+        if (data.statusCode != 200){
+            mystatus = "Could not load";
+        }
+        else {
+            mystatus = "Loaded!";
+        }
+    }
     var jsonoutput = JSON.stringify({
         original_url: req.params.name,
-        short_url: "http://dickorydock-shorturl.herokuapp.com/mememe"
+        short_url: "http://dickorydock-shorturl.herokuapp.com/mememe",
+        status: mystatus
     })
 	res.send(jsonoutput);
 })
