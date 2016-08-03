@@ -1,5 +1,6 @@
 var express = require("express");
 var moment = require("moment");
+var http = require("http");
 var app=express();
 var status;
 
@@ -15,7 +16,7 @@ app.get('/new/:name', function(req,res){
     // http.get(req.params.name, function(data){
         // console.log(data);
     // });
-    http.get("whatisthis", function(thisreq){
+    http.get("http://www.google.com", function(thisreq){
         console.log(thisreq.statusCode);
     });
     // http.get(req.params.name, function(data){
