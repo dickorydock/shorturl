@@ -9,7 +9,7 @@ var app=express();
 app.get('/new/:name', function(req,res){
 
     //detect if name is a URL
-    console.log(name);
+    // console.log(name);
     //return output
     var jsonoutput = JSON.stringify({
         original_url: "shortstop",
