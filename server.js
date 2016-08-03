@@ -2,8 +2,6 @@ var express = require("express");
 var moment = require("moment");
 var app=express();
 
-var jsonoutput;
-
 // app.get('/', function(req, res){
 //     jsonoutput = JSON.stringify({unix: null, natural: null});
 //     res.send(jsonoutput);
@@ -14,7 +12,7 @@ app.get('/new/:name', function(req,res){
 
     //return output
     var jsonoutput = JSON.stringify({
-        original_url: name,
+        original_url: "testhere",
         short_url: "http://dickorydock-shorturl.herokuapp.com/mememe"
     })
 	res.send(jsonoutput);
