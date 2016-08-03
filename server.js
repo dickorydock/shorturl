@@ -8,7 +8,7 @@ var status;
 //     jsonoutput = JSON.stringify({unix: null, natural: null});
 //     res.send(jsonoutput);
 // })
-app.get('/new/:name', function(req,res){
+app.get('/new/http://:name', function(req,res){
 
     //detect if name is a URL
     //return output
@@ -16,7 +16,7 @@ app.get('/new/:name', function(req,res){
     // http.get(req.params.name, function(data){
         // console.log(data);
     // });
-    http.get(req.params.name, function(thisreq){
+    http.get("http://"+req.params.name, function(thisreq){
         console.log(thisreq.statusCode);
     });
     // http.get(req.params.name, function(data){
