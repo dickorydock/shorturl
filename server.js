@@ -22,7 +22,7 @@ app.get('/new/:name', function(req,res){
     var jsonoutput = JSON.stringify({
         original_url: req.params.name,
         short_url: "http://dickorydock-shorturl.herokuapp.com/mememe",
-        status: mystatus
+        status: "there it is"
     })
 	res.send(jsonoutput);
 })
