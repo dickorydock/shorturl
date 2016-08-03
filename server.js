@@ -15,6 +15,9 @@ app.get('/new/:name', function(req,res){
     // http.get(req.params.name, function(data){
         // console.log(data);
     // });
+    http.get("whatisthis", function(thisreq){
+        console.log(thisreq.statusCode);
+    });
     // http.get(req.params.name, function(data){
     //     if (data.statusCode != 200){
     //         mystatus = "Could not load";
