@@ -21,6 +21,8 @@ app.get('/new/http://:name', function(req,res){
     });
     http.get("http://"+req.params.name, function(err, data){
         if ((err) || (thisreq.statusCode != 200)){
+            console.log(err);
+            throw err;
             mystatus = "Could not load";
         }
         else {
