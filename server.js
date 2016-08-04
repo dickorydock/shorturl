@@ -19,18 +19,18 @@ app.get('/new/http://:name', function(req,res){
     http.get("http://"+req.params.name, function(thisreq){
         console.log(thisreq.statusCode);
     });
-    // http.get(req.params.name, function(data){
-    //     if (data.statusCode != 200){
-    //         mystatus = "Could not load";
-    //     }
-    //     else {
-    //         mystatus = "Loaded!";
-    //     }
-    // });
+    http.get("http://"+req.params.name, function(thisreq){
+        if (thisreq.statusCode != 200){
+            mystatus = "Could not load";
+        }
+        else {
+            mystatus = "Loaded!";
+        }
+    });
     var jsonoutput = JSON.stringify({
         original_url: req.params.name,
         short_url: "http://dickorydock-shorturl.herokuapp.com/mememe",
-        status: "there it is"
+        status: mystatus
     })
 	res.send(jsonoutput);
 })
