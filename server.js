@@ -53,7 +53,7 @@ app.get('/new/:name*', function(req,res){
                     //if we didn't find the working URL, add it
                     else {
                         var sitenumber = max_site_number + 3;
-                        var newsitejson={original_url: wwwpath, short_url: "makeme", site_number: sitenumber}
+                        var newsitejson={original_url: wwwpath, site_number: sitenumber}
                         shorturl.insert(newsitejson)
                     }
 
