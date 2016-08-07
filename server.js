@@ -70,9 +70,7 @@ app.get('/new/:name*', function(req,res){
     //if there is an error in finding the site in the URL, return 'could not load' status
     .on('error', function(e){
         console.error(e.code);
-        loadstatus = "Could not load";
-             res.json({error: "Not a valid URL - try again."})
-           
+        res.json({error: "Not a valid URL - try again."})          
     })
 })
 
@@ -89,7 +87,7 @@ app.get('/:shortnum*', function(req,res){
         //look for the site in the existing database, and either redirect or give an error
         shorturl.find(
            {site_number: sitenumber}
-         , {_id: 0, original_url: 1,short_url: 1, site_number:1})
+         , {_id: 0, original_url: 1, site_number:1})
         .toArray(function(err,documents){ 
             if (documents.length>0){
             res.redirect("http://"+documents[0]["original_url"])
