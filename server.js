@@ -7,6 +7,8 @@ var http = require("http");
 var app=express();
 var mystatus="";
 
+var mongo = require('mongodb').MongoClient;
+
 app.get('/new/:name*', function(req,res){
     console.log("worked")
     //detect if name is a URL
@@ -47,6 +49,18 @@ app.get('/new/:name*', function(req,res){
 app.listen(process.env.PORT, function(){
     console.log("App listening")
 });
+
+
+mongo.connect("mongodb://dickorydock:$iderHouseRul3z@ds01316.mlab.com:1316/urlrosetta", function(err, db) {
+  if (err) throw err;
+  var thiscollection = db.collection("shorturl");
+  var jsonobject = {original_url: "mememe", new_url: "youyouyou"};
+  thiscollection.insert(jsonobject, function(err, data){
+   console.log(JSON.stringify(jsonobject));
+    });
+  db.close();
+  });
+
 
     // mystatus = "no http.get";
     // var jsonoutput = JSON.stringify({
