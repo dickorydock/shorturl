@@ -9,6 +9,12 @@ var mystatus="";
 
 var mongo = require('mongodb').MongoClient;
 
+
+/******************************
+****** URL SHORTENER **********
+******************************/
+
+
 app.get('/new/:name*', function(req,res){
     //detect if name is a URL
     //if it is not a proper http, return 'could not load' status
@@ -104,6 +110,9 @@ app.get('/:shortnum*', function(req,res){
 
 })
 
+/******************************
+****** IMAGE SEARCH **********
+******************************/
 
 var imgurClientID = "96eb18eadc6b134";
 var imgurClientSecret = "246c6b2d1fd8533d8c6a841e2044aba86428ea13";
