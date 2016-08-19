@@ -184,7 +184,7 @@ app.get('/imagesearch/latest/', function(req,res){
 
 
 app.get('/metadata/upload', function(req,res){
-   res.sendFile( __dirname + "/" + "index.html" );
+   res.sendFile( __dirname + "/metadata/" + "index.html" );
 })
 
 app.post('/metadata/upload', upload.single('selectedFile'), function(req, res){
