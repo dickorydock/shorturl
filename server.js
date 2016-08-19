@@ -183,6 +183,8 @@ app.get('/imagesearch/latest/', function(req,res){
 ***************************************/
 
 
+var upload = multer({ dest: './uploads' })
+
 app.get('/metadata/upload', function(req,res){
    res.sendFile( __dirname + "/metadata/" + "index.html" );
 })
