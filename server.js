@@ -5,6 +5,8 @@ var express = require("express");
 var moment = require("moment");
 var http = require("http");
 var request = require("request");
+var multer  = require('multer')
+
 var app=express();
 var mystatus="";
 
@@ -174,6 +176,21 @@ app.get('/imagesearch/latest/', function(req,res){
     db.close()
     })
 });
+
+
+/***************************************
+************ FILE SIZE TOOL ************
+***************************************/
+
+
+app.get('/metadata/upload', function(req,res){
+   res.sendFile( __dirname + "/" + "index.html" );
+})
+
+app.post('/metadata/upload', upload.single('selectedFile'), function(req, res){
+  //calculate the size of the uploaded thing
+  res.json({filesize: req.file.size});
+})
 app.listen(process.env.PORT, function(){
     console.log("App listening")
 });
