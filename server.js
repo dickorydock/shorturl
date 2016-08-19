@@ -65,7 +65,7 @@ app.get('/new/:name*', function(req,res){
 
                     //return the info about the short link
                     res.json({original_url:  req.params.name+"://"+wwwpath,
-                        short_url: "http://dickorydock-shorturl.herokuapp.com/"+sitenumber
+                        short_url: "http://dickorydock-shorturl.herokuapp.com/shorter/"+sitenumber
                         });
                   db.close()
                 })
@@ -81,7 +81,7 @@ app.get('/new/:name*', function(req,res){
 })
 
 
-app.get('/:shortnum*', function(req,res){
+app.get('/shorter/:shortnum*', function(req,res){
    var sitenumber = parseInt(req.params.shortnum);
    var siteextra = req.params[0];
    if (siteextra.length > 0){
